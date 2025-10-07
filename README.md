@@ -74,12 +74,12 @@ By temporarily creating this rule, I was able to demonstrate how insecure config
 <br />
 
 <p align="left"> 
-Named the Azure Virtual Machine (CORP-NETCT-EAST-1), a honeypot, intentionally designed to attract cyber attackers. It mimics real targets, such as servers, applications, or networks, but is isolated and monitored to record attacker behavior, techniques, and tools.
+Named the Azure Virtual Machine (CORP-CTNET-EAST-1), a honeypot, intentionally designed to attract cyber attackers. It mimics real targets, such as servers, applications, or networks, but is isolated and monitored to record attacker behavior, techniques, and tools.
 
 The main purpose of a honeypot is to detect, study, and analyze malicious activity without risking real assets. Security teams use honeypots to gain insights into new attack patterns, improve intrusion detection systems, and strengthen overall defensive strategies.
 
 <p align="center"> 
-<img src="https://i.imgur.com/aWAQVca.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/nNR0WH8.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 CT Lab was created
