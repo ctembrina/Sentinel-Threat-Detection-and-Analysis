@@ -95,7 +95,7 @@ I tested connectivity to the virtual machine by connecting via RDP and then conf
 
 <h2>Summary</h2>
 
-Created an Azure Free Trial subscription through the Azure Portal, verified identity, and activated default directory services. Configured cost management and billing settings to monitor usage, ensuring no paid resources were deployed during initial setup. Prepared environment for future SOC lab resource creation.
+
 
 
 
