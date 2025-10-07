@@ -73,6 +73,8 @@ By temporarily creating this rule, I was able to demonstrate how insecure config
 <br />
 <br />
 
+- <b>Virtual Machine Configuration</b>
+
 <p align="left"> 
 Named the Azure Virtual Machine (CORP-CTNET-EAST-1), a honeypot, intentionally designed to attract cyber attackers. It mimics real targets, such as servers, applications, or networks, but is isolated and monitored to record attacker behavior, techniques, and tools.
 
