@@ -82,28 +82,11 @@ The main purpose of a honeypot is to detect, study, and analyze malicious activi
 <img src="https://i.imgur.com/nNR0WH8.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-CT Lab was created
+I tested connectivity to the virtual machine by connecting via RDP and then configured the firewall rules within the VM to allow the necessary traffic.
 <br/>
-<img src="https://i.imgur.com/e2Ek6C1.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/Fxq2yRu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-Created Virtual Machine:  <br/>
-<img src="https://i.imgur.com/VbbG8dT.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-<img src="https://i.imgur.com/rsJoRDq.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-CT-SOC-Lab setup with all resources needed to do project: <br />
--Virtual Machine
--Public IP Address
--Network Security Group
--Virtual Network
--Network Interface
--Disk
--Virtual Network
-<img src="https://i.imgur.com/0jAyCAP.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-
 
 
 
