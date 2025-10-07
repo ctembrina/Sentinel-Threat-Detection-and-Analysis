@@ -49,25 +49,37 @@ The lab environment is built within the Azure Cloud Platform, where a Resource G
   
 <h2>Lab:</h2>
 
-<p align="center"> 
-<br/>
-Network Security Group (NSG) Exposure Configuration
+- <b>Network Security Group (NSG) Exposure Configuration</b>
 
-<img src="https://i.imgur.com/JrHMCHl.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<p align="left"> 
+In this stage of the project, I modified the Azure Network Security Group (NSG) to simulate a high-risk network exposure. I deleted the original RDP (3389) inbound rule and created a new rule named “Danger_AllowAnyCustomInbound”, configured to allow unrestricted inbound traffic from any source and any port.
+
+This intentional misconfiguration was designed to mimic a real-world vulnerability, allowing potential external access to the virtual machine through the public internet. The objective was to test how Microsoft Sentinel and the Log Analytics Workspace detect, log, and visualize these suspicious or unauthorized connections in a Security Operations Center (SOC) environment.
+
+By temporarily creating this rule, I was able to demonstrate how insecure configurations can be quickly identified through alerting and analytics tools within Azure’s security ecosystem.
+
+<p align="center"> 
+
+<img src="https://i.imgur.com/8yF0Bxz.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-Created Virtual Network
-<br/>
-<img src="https://i.imgur.com/7odSjEY.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/6y57hAZ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-<img src="https://i.imgur.com/Ek7gX4v.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/U2NzW1j.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-<img src="https://i.imgur.com/xcOQIJV.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/uPb6IRP.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-<img src="https://i.imgur.com/wKqXwR2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+<p align="left"> 
+Named the Azure Virtual Machine (CORP-NETCT-EAST-1), a honeypot, intentionally designed to attract cyber attackers. It mimics real targets, such as servers, applications, or networks, but is isolated and monitored to record attacker behavior, techniques, and tools.
+
+The main purpose of a honeypot is to detect, study, and analyze malicious activity without risking real assets. Security teams use honeypots to gain insights into new attack patterns, improve intrusion detection systems, and strengthen overall defensive strategies.
+
+<p align="center"> 
+<img src="https://i.imgur.com/aWAQVca.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 CT Lab was created
