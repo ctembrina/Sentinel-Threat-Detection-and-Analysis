@@ -41,7 +41,6 @@ The lab environment is built within the Azure Cloud Platform, where a Resource G
 - <b>Microsoft Sentinel (SIEM) – Performs detection, analysis, and visualization of attack data</b>
 - <b>Attack Map Dashboard – Displays live intrusion attempts based on geolocation data</b>
 
-<br />
 <h2>Outcomes:</h2>
 
 - <b>Successfully detected and visualized external brute-force and network intrusion attempts</b> 
