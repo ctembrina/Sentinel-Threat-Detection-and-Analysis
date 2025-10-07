@@ -46,6 +46,13 @@ The lab environment is built within the Azure Cloud Platform, where a Resource G
 - <b>Successfully detected and visualized external brute-force and network intrusion attempts</b> 
 - <b>Gained hands-on experience configuring Azure Sentinel, Log Analytics, and NSG rules</b>
 - <b>Demonstrated understanding of SIEM operations, cloud security architecture, and incident analysis</b>
+  
+<h2>Lab:</h2>
+
+<p align="center"> 
+<br/>
+Network Security Group (NSG) Exposure Configuration
+
 <img src="https://i.imgur.com/JrHMCHl.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
