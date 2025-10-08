@@ -245,8 +245,20 @@ Created a Sentinel workbook and added a Windows VM attack map that visualizes se
 
 
 <h2>Summary</h2>
+<p align="left">
+Gained hands-on experience in Azure Sentinel by analyzing Windows Security Events, enriching logs with GeoIP data to trace attacker locations, and visualizing threat activity through workbooks and attack maps. Strengthened skills in threat detection, log correlation, and actionable security monitoring in a cloud environment.
+<br />
+<br />
+  
+- <b>How to ingest and query Windows Security Events in Azure Sentinel using KQL.</b>
 
+- <b>How to enrich security logs with GeoIP data to trace attacker locations.</b>
 
+- <b>How to visualize threat activity using workbooks and attack maps for actionable insights.</b>
+
+- <b>Practical experience in correlating logs, detecting suspicious activity, and presenting findings in a structured, analyst-friendly format.</b>
+
+- <b>Strengthened understanding of threat detection, incident investigation, and security monitoring in a cloud environment.</b>
 
 
 
