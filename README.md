@@ -127,14 +127,66 @@ Limiting the results to only failed logon events. This confirmed that unsuccessf
 <br />
 <br />
 
+
+<h2>Microsoft Sentinel:</h2>
+
 - <b>Log Analytics Workspace</b>
 <p align="left"> 
-Configured an Azure Log Analytics Workspace to centralize and analyze log data from virtual machines, enabling event correlation, security monitoring, and real-time alerting using KQL queries.
+Log Analytics Workspace (LOGA-SOC-LAB-100) – Created and configured a centralized workspace in Azure to collect and analyze security event data from connected resources. Added Data Connectors such as Windows Security Events to capture logon activity and system events from virtual machines. Utilized Kusto Query Language (KQL) for event correlation, threat detection, and security monitoring within the lab environment.
+<p align="center"> 
+<img src="https://i.imgur.com/64gGuNa.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+<img src="https://i.imgur.com/58SdSIl.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+<p align="left"> 
+Created a Data Collection Rule (DCR) to define log sources and destinations for the Windows Security Events (AMA) connector. Configured the rule to collect Security event logs from the Azure virtual machine CORP-NETCT-EAST-1 and route them to the LOGA-SOC-LAB-100 Log Analytics Workspace for centralized analysis and monitoring.
+<p align="center"> 
+<img src="https://i.imgur.com/1rVKsu7.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+<p align="left"> 
+Installed the Azure Monitor Windows Agent (AMA) extension on VM CORP-NETCT-EAST-1 and configured a Data Collection Rule (DCR) to collect Windows Security Event logs via AMA, forwarding them to the LOGA-SOC-LAB-100 workspace for centralized security monitoring in Microsoft Sentinel.
+<p align="center"> 
+<img src="https://i.imgur.com/LEDxhZi.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
 
 
+<h2>Captured intruder attempt logs:</h2>
+<p align="left"> 
+Azure Log Analytics workspace named LOGA-SOC-LAB-100 in the Logs view. A Kusto Query Language (KQL) query SecurityEvent has been executed to retrieve Windows Security event logs. The results table displays multiple entries of Event ID 4625, which indicates failed logon attempts -
 
+- <b>Account: The username that attempted to log in (e.g., \SICHE, \ALI, \BLANCA, etc.).</b>
 
+- <b>Computer: All events are from the VM CORP-CTNET-EAST.</b>
 
+- <b>EventSourceName: Microsoft-Windows-Security-Auditing.</b>
+
+- <b>Channel: Security.</b>
+
+- <b>EventID: 4625 for all entries.</b>
+
+- <b>Activity: Text description, e.g., “4625 – An account failed to log on.”</b>
+
+- <b>AuthenticationPackageName: NTLM, showing the type of authentication attempt.</b>
+
+- <b>FailureReason: Shows the failure code %2313.</b>
+
+- <b>IpAddress / IpPort: Source IP addresses and port numbers from which the failed logins originated.</b>
+
+- <b>LogonProcessName: NtLmSsp, indicating the authentication process used.</b>
+<br />
+<br />
+The logs show multiple failed logon attempts (intruder attacks) across various usernames, likely generated for testing failed login capture in Event Viewer.
+
+The logs are successfully collected via the AMA (Azure Monitor Agent) and sent to the LOGA-SOC-LAB-100 workspace.
+
+This confirms the Data Collection Rule (DCR) and Windows Security Events connector are functioning correctly.
+
+<p align="center">
+<img src="https://i.imgur.com/d3bZknv.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 
 
