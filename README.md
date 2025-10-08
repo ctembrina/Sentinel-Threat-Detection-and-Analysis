@@ -178,13 +178,8 @@ Azure Log Analytics workspace named LOGA-SOC-LAB-100 in the Logs view. A Kusto Q
 
 - <b>LogonProcessName: NtLmSsp, indicating the authentication process used.</b>
 <br />
-<br />
-The logs show multiple failed logon attempts (intruder attacks) across various usernames, likely generated for testing failed login capture in Event Viewer.
-
-The logs are successfully collected via the AMA (Azure Monitor Agent) and sent to the LOGA-SOC-LAB-100 workspace.
-
-This confirms the Data Collection Rule (DCR) and Windows Security Events connector are functioning correctly.
-
+<p align="left"> 
+The logs show multiple failed logon attempts (intruder attacks) across various usernames, likely generated for testing failed login capture in Event Viewer. The logs are successfully collected via the AMA (Azure Monitor Agent) and sent to the LOGA-SOC-LAB-100 workspace. This confirms the Data Collection Rule (DCR) and Windows Security Events connector are functioning correctly.
 <p align="center">
 <img src="https://i.imgur.com/d3bZknv.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
