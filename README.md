@@ -182,6 +182,65 @@ Azure Log Analytics workspace named LOGA-SOC-LAB-100 in the Logs view. A Kusto Q
 The logs show multiple failed logon attempts (intruder attacks) across various usernames, likely generated for testing failed login capture in Event Viewer. The logs are successfully collected via the AMA (Azure Monitor Agent) and sent to the LOGA-SOC-LAB-100 workspace. This confirms the Data Collection Rule (DCR) and Windows Security Events connector are functioning correctly.
 <p align="center">
 <img src="https://i.imgur.com/d3bZknv.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<p align="left"> 
+The screenshot shows a query executed in the Azure Log Analytics Workspace LOGA-SOC-LAB-100, filtering Windows Security Events for the account \SICHE. The results display a failed logon attempt (Event ID 4625) on the virtual machine CORP-CTNET-EAST, originating from IP address 92.63.197.23 and authenticated through NTLM. This event indicates a possible unauthorized or intruder login attempt, commonly associated with brute-force or credential-guessing activity detected during the SOC lab analysis.
+  (KQL)
+  - SecurityEvent
+| where Account == "\\SICHE"
+
+<p align="center">
+<img src="https://i.imgur.com/NWN6AVV.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<p align="left"> 
+Conducted an IP geolocation lookup using IPlocation.net; results indicate the attacker originated from an approximate location associated with IP 92.63.197.23 (geolocation is approximate and should be corroborated with additional evidence).
+<p align="center">
+<img src="https://i.imgur.com/diqqjqs.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<p align="left"> 
+This KQL query - 
+SecurityEvent
+| where EventID == 4625
+| project TimeGenerated, Account, Computer, EventID, Activity, IpAddress
+<br />
+<br />
+Filters Windows Security Events for Event ID 4625, which indicates failed login attempts. It then displays key details such as time generated, user account, host computer, event ID, activity description, and source IP address, helping identify potential intruder or brute-force attacks in Azure Sentinel.
+<p align="center">
+<img src="https://i.imgur.com/Z7oHzAy.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+<p align="left"> 
+A GeoIP watchlist was created to track and correlate login attempts or alerts based on geographic locations, helping identify suspicious or foreign IP addresses that may indicate intruder activity.
+<br />
+<p align="center">
+<img src="https://i.imgur.com/C0NU4mO.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<p align="left">
+This KQL query - 
+let GeoIPDB_FULL = _GetWatchlist("geoip");
+let WindowsEvents = SecurityEvent
+    | where IpAddress == <attacker IP address>
+    | where EventID == 4625
+    | order by TimeGenerated desc
+    | evaluate ipv4_lookup(GeoIPDB_FULL, IpAddress, network);
+WindowsEvents
+    | project TimeGenerated, Computer, Attackerip = IpAddress, cityname, countryname, latitude, longitude
+<br />
+<br />
+Filtering Windows Security Events for failed logins (Event ID 4625) from specific IP addresses, this project enriches the events with geographic data using a GeoIP watchlist. It showcases the ability to detect potential intrusions, trace attacker locations, and provide actionable insights through KQL query analysis.
+<p align="center">
+<img src="https://i.imgur.com/C0gO6kV.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<p align="left">
+Created a Sentinel workbook and added a Windows VM attack map that visualizes security events, aligning with logged failed login attempts. The workbook highlights detection points, traces attacker locations using GeoIP data, and provides actionable insights for threat analysis.
+<p align="center">
+<img src="https://i.imgur.com/OSbpT6y.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+<img src="https://i.imgur.com/D7RZ2ZV.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+<img src="https://i.imgur.com/tDHcx9a.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 
 
